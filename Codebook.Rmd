@@ -1,0 +1,46 @@
+---
+output:
+  html_document: default
+  pdf_document: default
+---
+# Codebook for assignmentscript.R solving the tasks of the final project
+
+## Steps done for creating a tidy data set
+
+At first a overview of the different datasets was created, by reading the Readme file containg information
+about the different data sets, and by getting a first glance of the dimensions of the different files
+to grasp the content.
+
+The first step was to realise, that the X - dataframes contained the observed measurements, Y- dataframes contained the different activities, features contained the mapping of each column to the specific observed axis, activity labels contained the mapping of y to the specific activity and subject contained the allocation of each observation to the investigated subject.
+
+Afterwards the columnnames were mapped with the features and the subject and y frame was appended as columns to the data set. 
+
+Since the activites in y frame were identified by numerical values and for a tidy data set this shouldn't be done in this way, the activites were merged with the activty labels to have the strings like "Walking, Laying,etc." in the dateset and the numerical values could be deleted. 
+
+The specific steps for completing the 5 tasks of the Assignment instructions are explained in the script via comments. 
+
+The final file test_train_binded contains following variables
+
+
+                
+*   subject  
+        The correlation of each row to the specific contestant of the experiment  
+        Number of total contestants: 1:30
+                
+*   activity  
+        Describing the specific movement which is measured  
+        Number of total movements : 6    
+        (Laying, Sitting, Standing, Walking, Walking Downstairs, Walking Upstairs )  
+                
+ *   tBodyAcc-mean()-X  
+        This column and every following is described briefly in the file: features info. 
+                
+The final file avg_table contains following differences
+
+*    Rows containg measurements  
+         All these rows contain the AVG of all registered measurements for each subject and activity
+         and is so marked with the AVG - prefix
+                
+                
+            
+            
