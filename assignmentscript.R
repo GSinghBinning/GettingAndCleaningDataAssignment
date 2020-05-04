@@ -41,7 +41,7 @@ filtered_syxa_train <- syx_activity_train[,c(3,2,grep('*mean\\(|*std\\(', names(
 test_train_binded <- rbind(filtered_syxa_test,filtered_syxa_train)
 
 #saving the dataset to a local file called "tidy_dataset.txt"
-write.table(test_train_binded, './tidy_dataset.txt')
+write.table(test_train_binded, './tidy_dataset.txt', row.name=FALSE)
 
 #creating the second independent table as the assignment instructs us to do, by grouping the data by subjects 
 #and activties and then calculating the Mean of every variable for each subject and activity and afterwards
@@ -52,4 +52,4 @@ avg_table <- test_train_binded %>%
     rename_at(vars(-subject, -activity_name), ~ paste0('AVG: ',.)) 
 
 #saving the second data table to a local file called "dataset_with_avg.txt"
-write.table(avg_table, './dataset_with_avg.txt')
+write.table(avg_table, './dataset_with_avg.txt', row.name=FALSE)
